@@ -27,8 +27,22 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: "gatsby-source-wordpress",
+      options: {
+        /*
+         * The base URL of the Wordpress site without the trailingslash and the protocol. This is required.
+         * Example : 'gatsbyjsexamplewordpress.wordpress.com' or 'www.example-site.com'
+         */
+        baseUrl: "elpuas.com",
+        protocol: "https",
+        includedRoutes: ["**/categories", "**/posts", "**/tags"],
+        useACF: false,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
+    `gatsby-plugin-glamor`,
     // `gatsby-plugin-offline`,
   ],
 }
